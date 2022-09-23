@@ -1,0 +1,105 @@
+@import "header.css";
+@import "footer.css";
+
+.exploreContainer {
+  width: 935px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+
+
+.popular {
+  width: 100%;
+  padding-top: 84px;
+  padding-bottom: 30px;
+}
+.popular .exploreContainer {
+  flex-direction: column;
+}
+.popular .exploreContainer .popular-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 15px;
+}
+
+.popular .exploreContainer .popular-gallery{
+	display:flex;
+	flex-direction:column;
+}
+
+
+
+.preview__card.pPage .preview__card__wrap {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.preview__card.pPage .preview__card__wrap .preview__profile {
+    display: flex;
+    align-items: center;
+}
+
+
+.preview__card.pPage .preview__card__wrap .preview__profile .profile-image {
+    width: 40px;
+    height: 40px;
+    padding: 3px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.preview__card.pPage .preview__card__wrap .preview__profile .preview__username {
+    margin-left: 10px;
+    position: relative;
+}
+.preview__card.pPage .preview__card__wrap .preview__profile .preview__username:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: 30px;
+    top: -2px;
+}
+.preview__card.pPage .preview__card__wrap .preview__profile .preview__caption {
+    margin: 6px 0 6px 30px;
+}
+
+.preview__card.pPage .story-list__item {
+    display:none;
+}
+
+.preview__card.pPage .story-list__item.showComment {
+    display:block;
+}
+
+/*댓글 달기*/
+
+.sl__item__contents{
+	margin-left: 35px !important;
+}
+
+.preview__card.pPage .sl__item__input{
+	display: flex;
+    border-top: 1px solid #dbdbdb;
+}
+
+.preview__card.pPage .sl__item__input > input{
+	flex: 9;
+    height: 56px;
+    border: 0;
+    padding-left: 15px;
+}
+
+.preview__card.pPage .sl__item__input > button{
+	flex: 1;
+    height: 56px;
+    border: 0;
+    background-color: transparent;
+    font-weight: 500;
+    color: #0095f6;
+    font-size: 14px;
+}
+
+
+

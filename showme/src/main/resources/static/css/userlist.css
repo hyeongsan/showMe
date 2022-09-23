@@ -1,0 +1,90 @@
+.tabListAdmin{
+	display: flex;
+    justify-content: space-between;
+    position: relative;
+    left: 50px;
+}
+
+.tabListAdmin > div{
+	width: 100px;
+	text-align: center;
+}
+
+.tabContentAdmin{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.tabContentAdminDiv{
+	margin-top:20px;
+}
+
+.tabContentAdmin > div{
+	width:150px;
+}
+
+.tabContentAdmin > div > img{
+	width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #999;
+}
+
+.authBtn{
+	border: none;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.modalPhoto{
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modalPhoto > div {
+	postition:relatvie;
+}
+
+.modalPhoto img{
+
+	display:none;
+	width: 300px;
+    height: auto;  
+    border-radius: 10px;
+    border: 1px solid #000;
+}
+
+.modalPhoto img.showModal{
+	display:block;
+	background: #fff;
+}
+
+
+.closeModal{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display:none;
+}
+
+.closeModal.showClose{
+	display: block;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.modalBackground{
+	width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display:none;
+}
