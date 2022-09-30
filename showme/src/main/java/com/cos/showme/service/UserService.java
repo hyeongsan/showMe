@@ -100,9 +100,16 @@ public class UserService {
 					comment.setEqualUserState(true);
 					}	
 				});
+				
+				//게시글 본인여부
+				if(image.getUser().getId()==principalId) {
+					image.setImageState(true);
+				}
+				
 			
 		});
 		
+	
 
 		
 		return dto;

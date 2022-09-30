@@ -37,13 +37,15 @@ function addComment(imageId) {
 	let comment = res.data;
 		
 	let content = `
+		<div class="sl__item__contents">
 		  <div class="sl__item__contents__comment" id="storyCommentItem-${comment.id}"> 
 		    <p class="commentUser">
-		      <b>${comment.user.username} :</b>
+		      <b><a href="/user/${comment.user.id}">${comment.user.name}</a> :</b>
 		      ${comment.content}
 		    </p>
 		    <button class="deleteBtn" onclick="deleteComment(${comment.id})"><i class="fas fa-times"></i></button>
-		  </div>`;
+		  </div>
+		 </div>`;
 		  
 	commentList.prepend(content);
 	
@@ -67,6 +69,21 @@ function deleteComment(commentId) {
 	}).done(res=>{
 		console.log("성공",res);
 		$(`#storyCommentItem-${commentId}`).remove();
+	}).fail(error=>{
+		console.log("오류",error);
+	})
+}
+
+//(6) 게시물 삭제
+function deleteImage(imageId){
+	$.ajax({
+		type:"delete",
+		url:`/api/image/${imageId}/delete`,
+		dataType:"json"
+	}).done(res=>{
+		console.log("성공",res);
+		console.log(imageId);
+		$(`#storyImageItem-${imageId}`).remove();
 	}).fail(error=>{
 		console.log("오류",error);
 	})

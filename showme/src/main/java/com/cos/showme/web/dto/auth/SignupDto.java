@@ -21,6 +21,7 @@ public class SignupDto { // Dto - 통신할 때 필요한 데이터를 담아주
 	private String email;
 	@NotBlank
 	private String name;
+	private String phone;
 	
 	private MultipartFile file;
 	
@@ -30,6 +31,7 @@ public class SignupDto { // Dto - 통신할 때 필요한 데이터를 담아주
 				.password(password)
 				.email(email)
 				.name(name)
+				.phone(phone)
 				.profileImageUrl(profileImageUrl)
 				.build();
 	}

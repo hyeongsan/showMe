@@ -32,7 +32,7 @@ public class Comment {
 	@GeneratedValue(strategy = GenerationType.IDENTITY) 
 	private int id;
 	
-	@Column(length = 100, nullable = false) // 제약조건
+	@Column(length = 1000, nullable = false) // 제약조건
 	private String content;
 	
 	@JsonIgnoreProperties("images")

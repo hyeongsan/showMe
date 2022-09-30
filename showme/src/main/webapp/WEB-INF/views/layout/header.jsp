@@ -32,7 +32,11 @@
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
+<style>
+.preview__username{
+	width:52px;
+}
+</style>
 <body>
 
 	<!-- principalId 담아두는 곳 -->
@@ -55,7 +59,7 @@
 					<li class="navi-item"><a href="/">
 							<i class="fas fa-home"></i>
 						</a></li>
-					<li class="navi-item"><a href="/image/popular">
+					<li class="navi-item"><a href="/image/recent">
 							<i class="far fa-compass"></i>
 						</a></li>
 					<li class="navi-item"><a href="/user/${principal.user.id}">

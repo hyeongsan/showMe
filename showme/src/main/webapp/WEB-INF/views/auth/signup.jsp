@@ -61,11 +61,11 @@
                             <input type="email" name="email" placeholder="이메일" required="required"/>                           
                             <input type="text" name="name" placeholder="이름" required="required"/>
                              <span style="margin:10px 0;">휴대폰 인증</span>
-                            <input id="inputPhoneNumber" type="text" placeholder="휴대폰 번호"/>
+                            <input id="inputPhoneNumber" type="text" placeholder="휴대폰 번호" name="phone"/>
                             <button type="button" id="sendPhoneNumber">번호전송</button> 
                             <input id="inputCertifiedNumber" placeholder="인증번호를 입력해주세요"/>
                             <button type="button" id="checkBtn">번호확인</button> 
-                            <button class="pointer">가입</button>
+                            <button class="pointer none">가입</button>
                         </form>
                         <!--회원가입 인풋end-->
                     </div>

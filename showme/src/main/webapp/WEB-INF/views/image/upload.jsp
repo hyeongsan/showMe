@@ -10,23 +10,24 @@
                
                <!--사진업로드 로고-->
                 <div class="upload-top">
-                    <a href="home.html" class="">
-                        <img src="/images/logo.jpg" alt="">
-                    </a>
-                    <p>사진 업로드</p>
+                 
+                       <h1 style="font-style:oblique; font-size: 30px;">show me</h1>
+                   
+                    <p style="margin-top: 20px;">질문 등록</p>
                 </div>
                 <!--사진업로드 로고 end-->
                 
                 <!--사진업로드 Form-->
                 <form class="upload-form" action="/image" method="post" enctype="multipart/form-data">
-                    <input  type="file" name="file"  onchange="imageChoose(this)"/>
-                  <!--   <div class="upload-img">
+                    <input  type="file" name="file"  onchange="imageChoose(this)" style="display:none;"/>
+                   <!--  <div class="upload-img">
                         <img src="/images/person.jpeg" alt="" id="imageUploadPreview" /> 
                     </div> -->
                     
                     <!--사진설명 + 업로드버튼-->
+                    <span style="margin: 35px 0;">구체적으로 질문 할 수록 좋은 답변을 받을 확률이 올라가요.</span>
                     <div class="upload-form-detail">
-                   		 <input type="text" placeholder="사진설명" name="caption"/>
+                   		 <input type="text" placeholder="질문을 등록해주세요" name="caption"/>
                         <button class="cta blue">업로드</button>
                     </div>
                     <!--사진설명end-->

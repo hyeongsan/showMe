@@ -63,6 +63,9 @@ public class Image {
 	@Transient
 	private int likeCount;
 	
+	@Transient
+	private boolean imageState;
+	
 	private LocalDateTime createDate; // 시간
 	
 	@PrePersist //DB에 insert되기 직전에 실행

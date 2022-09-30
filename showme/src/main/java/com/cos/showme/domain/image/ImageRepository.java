@@ -13,7 +13,7 @@ public interface ImageRepository extends JpaRepository<Image,Integer> {
 			+ "d= :principalId) ORDER BY id DESC", nativeQuery=true)
 	Page<Image> mStory(int principalId,Pageable pageable); // 이 mStory를 가져올 때, 3건씩 정렬해서 가져옴 
 	
-	@Query(value="select i.* from image i inner join (select imageId, count(imageId) likeCount from likes group by imageId) c on i.id = c.imageId order by likecount DESC",nativeQuery=true)
+	@Query(value="select i.* from image i inner join (select imageId, NVL(count(imageId), 0) as commentCount from comment group by imageId) c on i.id = c.imageId order by commentCount DESC",nativeQuery=true)
 	List<Image> mPopular();
 	
 	@Query(value="select * from image",nativeQuery=true)

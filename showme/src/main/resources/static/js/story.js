@@ -110,7 +110,7 @@ function getStoryItem(image) {
 		item +=`
 		<div class="sl__item__contents__comment" id="storyCommentItem-${comment.id}">
 		<p class="commentUser">
-			<a href="/user/${comment.user.id}">${comment.user.username}</a> : ${comment.content}
+			<a href="/user/${comment.user.id}">${comment.user.name}</a> : ${comment.content}
 		</p>`;
 				
 				

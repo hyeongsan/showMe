@@ -54,7 +54,7 @@
 
 			<div class="subscribe">
 				<ul>
-					<li><a href=""> 게시물<span>${dto.imageCount}</span>
+					<li><a href=""> 게시물<span class="imageCount">${dto.imageCount}</span>
 					</a></li>
 					<li><a href="javascript:subscribeInfoModalOpen(${dto.user.id});"> 구독정보<span>${dto.subscribeCount}</span>
 					</a></li>
@@ -88,7 +88,7 @@
 				<!--질문 아이템들-->
 				<div class="active">
 						<c:forEach var="image" items="${dto.user.images}"> <!-- EL표현식에서 변수명을 적으면 get함수가 자동호출됨 -->
-							<div>
+							<div id="storyImageItem-${image.id}">
 								<div class="preview__card__wrap">
 									<div class="preview__profile">
 										<img class="profile-image" src="/upload/${image.user.profileImageUrl}"
@@ -97,6 +97,14 @@
 										<p class="preview__caption">${image.caption}</p>
 									</div>	
 								</div>
+								
+								<c:choose>
+										<c:when test="${image.imageState}">
+												<button class="deleteBtn" onclick="deleteImage(${image.id})">
+													<i class="fas fa-times"></i>
+												</button>
+										</c:when>
+								</c:choose>
 							
 							<div class="story-list__item showComment">
 								<div id="storyCommentList-${image.id}">
@@ -104,7 +112,7 @@
 											<div class="sl__item__contents showComment">
 												<div class="sl__item__contents__comment" id="storyCommentItem-${comment.id}">
 													<p class="commentUser">
-														<b><a href="/user/${comment.user.id}">${comment.user.username}</a> :</b> ${comment.content}
+														<b><a href="/user/${comment.user.id}">${comment.user.name}</a> :</b> ${comment.content}
 													</p>
 																							
 												<c:choose>
@@ -151,7 +159,7 @@
 												<div class="sl__item__contents showComment">
 													<div class="sl__item__contents__comment" id="storyCommentItem-${answerComment.id}">
 														<p>
-															<b><a href="/user/${answerComment.user.id}">${answerComment.user.username}</a> :</b> ${answerComment.content}
+															<b><a href="/user/${answerComment.user.id}">${answerComment.user.name}</a> :</b> ${answerComment.content}
 														</p>
 																								
 													<c:choose>

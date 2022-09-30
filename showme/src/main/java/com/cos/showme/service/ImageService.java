@@ -15,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.cos.showme.config.auth.PrincipalDetails;
 import com.cos.showme.domain.image.Image;
 import com.cos.showme.domain.image.ImageRepository;
+import com.cos.showme.handler.ex.CustomApiException;
 import com.cos.showme.web.dto.image.ImageUploadDto;
 
 import lombok.RequiredArgsConstructor;
@@ -25,10 +26,47 @@ public class ImageService {
 	
 	private final ImageRepository imageRepository;
 	
+	@Transactional
+	public void 게시글삭제(int id) {			
+		try {
+			imageRepository.deleteById(id);
+		}catch(Exception e) {
+			throw new CustomApiException(e.getMessage());
+		}
+	}
+	
 	@Transactional(readOnly=true)
-	public List<Image> 인기사진(){
-		//return imageRepository.mPopular();		
-		return imageRepository.mRecent();
+	public List<Image> 인기사진(int principalId){
+		//return imageRepository.mPopular();
+		
+		List<Image> images = imageRepository.mPopular();
+		//게시글 본인 여부
+		
+		images.forEach((image)->{
+			if(image.getUser().getId()==principalId) {
+				image.setImageState(true);
+			}	
+		});
+		
+		
+		return images;
+	}
+	
+	@Transactional(readOnly=true)
+	public List<Image> 최근사진(int principalId){
+		//return imageRepository.mPopular();
+		
+		List<Image> images = imageRepository.mRecent();
+		//게시글 본인 여부
+		
+		images.forEach((image)->{
+			if(image.getUser().getId()==principalId) {
+				image.setImageState(true);
+			}	
+		});
+		
+		
+		return images;
 	}
 	
 	@Transactional(readOnly=true) // select만할꺼니까 readOnly, 그리고 readOnly면 영속성 컨텍스트 변경감지를 해서, 더티체킹, flush(반영) X
@@ -46,6 +84,12 @@ public class ImageService {
 					image.setLikeState(true);
 				}
 			});
+			
+			//게시글 본인 여부
+			if(image.getUser().getId()==principalId) {
+				image.setImageState(true);
+			}
+		
 			
 		});
 		

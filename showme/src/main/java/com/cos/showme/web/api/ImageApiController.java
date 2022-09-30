@@ -30,9 +30,15 @@ private final LikesService likesService;
 	@GetMapping("/api/image")
 	public ResponseEntity<?> imageStory(
 			@AuthenticationPrincipal PrincipalDetails principalDetails, 
-			@PageableDefault(size=3) Pageable pageable){
+			@PageableDefault(size=20) Pageable pageable){
 		Page<Image> images =  imageService.이미지스토리(principalDetails.getUser().getId(),pageable);
 		return new ResponseEntity<>(new CMRespDto<>(1,"성공",images),HttpStatus.OK);
+	}
+	
+	@DeleteMapping("/api/image/{imageId}/delete")
+	public ResponseEntity<?> unImage(@PathVariable int imageId){
+		imageService.게시글삭제(imageId);
+		return new ResponseEntity<>(new CMRespDto<>(1,"게시글삭제성공",null),HttpStatus.OK);
 	}
 	
 	@PostMapping("/api/image/{imageId}/likes")

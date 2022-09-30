@@ -31,7 +31,29 @@ public class ImageController {
 	@GetMapping("/image/popular")
 	public String popular(Model model,@AuthenticationPrincipal PrincipalDetails principalDetails) {
 		
-		List<Image> images = imageService.인기사진();
+		List<Image> images = imageService.인기사진(principalDetails.getUser().getId());
+		
+		images.forEach((image)->{		
+			
+			image.getComments().forEach((comment)->{
+				
+				if(principalDetails.getUser().getId()==comment.getUser().getId()) {
+					comment.setEqualUserState(true);
+				}	
+			});
+			
+		});
+		
+		
+		model.addAttribute("images",images);
+		
+		return "image/popular";
+	}
+	
+	@GetMapping("/image/recent")
+	public String recent(Model model,@AuthenticationPrincipal PrincipalDetails principalDetails) {
+		
+		List<Image> images = imageService.최근사진(principalDetails.getUser().getId());
 		
 		images.forEach((image)->{		
 			
