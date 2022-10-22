@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../layout/header.jsp"%>
-
+<head>
+	<link rel="stylesheet" href="/css/popular.css">
+</head>
 <!--인기 게시글-->
 <main class="popular">
 	<div class="exploreContainer">
@@ -19,7 +21,8 @@
 				<!-- <a href="/user/${image.user.id }"> <img src="/upload/${image.profileImageUrl}" />
 					</a> -->
 					<div class="preview__card pPage" id="storyImageItem-${image.id}">
-							<div class="preview__card__wrap">
+						<div class="preview__card__wrap">
+							<div>
 								<div class="preview__profile">
 									<img class="profile-image" src="/upload/${image.user.profileImageUrl}"
 								onerror="this.src='/images/person.jpeg'" />
@@ -35,7 +38,7 @@
 										</button>
 								</c:when>
 							</c:choose>
-							
+						</div>
 					<div class="story-list__item">
 							<div id="storyCommentList-${image.id}">
 								<c:forEach var="comment" items="${image.comments}">	

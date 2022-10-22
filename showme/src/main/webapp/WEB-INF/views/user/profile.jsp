@@ -90,6 +90,7 @@
 						<c:forEach var="image" items="${dto.user.images}"> <!-- EL표현식에서 변수명을 적으면 get함수가 자동호출됨 -->
 							<div id="storyImageItem-${image.id}">
 								<div class="preview__card__wrap">
+								<div>
 									<div class="preview__profile">
 										<img class="profile-image" src="/upload/${image.user.profileImageUrl}"
 									onerror="this.src='/images/person.jpeg'" />
@@ -105,6 +106,7 @@
 												</button>
 										</c:when>
 								</c:choose>
+							</div>
 							
 							<div class="story-list__item showComment">
 								<div id="storyCommentList-${image.id}">

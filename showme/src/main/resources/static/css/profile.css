@@ -500,6 +500,10 @@
 	display:none;
 }
 
+.tabContent  .preview__card__wrap{
+	display:flex;
+}
+
 .tabContent > div.active{
 	display:block;
 	
@@ -531,7 +535,7 @@
     background: rgba(255,255,255,0);
     margin-left: 7px;
     position: relative;
-    top: 2px;
+    top: 0px;
 }
 
 /* Animation */

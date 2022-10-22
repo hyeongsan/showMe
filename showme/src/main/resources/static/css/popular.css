@@ -28,7 +28,9 @@
 	flex-direction:column;
 }
 
-
+.preview__card .preview__card__wrap{
+	display:flex;
+}
 
 .preview__card.pPage .preview__card__wrap {
     display: flex;

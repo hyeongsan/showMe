@@ -49,8 +49,9 @@ public class UserApiController {
 	
 	@PutMapping("/api/user/{userId}/authSign")
 	public ResponseEntity<?> userAuthSign(@PathVariable int userId){
-		System.out.println("승인완료2");
-		userService.회원승인(userId);
+		System.out.println("디버깅");
+		 userService.회원승인(userId);
+		System.out.println("디버깅2");
 		return new ResponseEntity<>(new CMRespDto<>(1,"회원승인성공",null),HttpStatus.OK);
 	}
 	
