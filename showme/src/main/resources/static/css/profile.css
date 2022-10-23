@@ -502,6 +502,7 @@
 
 .tabContent  .preview__card__wrap{
 	display:flex;
+	justify-content:space-between;
 }
 
 .tabContent > div.active{

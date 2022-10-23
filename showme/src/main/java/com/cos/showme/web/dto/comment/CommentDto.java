@@ -1,5 +1,6 @@
 package com.cos.showme.web.dto.comment;
 
+import javax.persistence.Column;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -11,7 +12,8 @@ import lombok.Data;
 
 @Data
 public class CommentDto {
-	@NotBlank // 빈값이거나 null 체크
+	
+	@Column(length = 1000, nullable = false) // 제약조건
 	private String content;
 	@NotNull 
 	private Integer imageId;
