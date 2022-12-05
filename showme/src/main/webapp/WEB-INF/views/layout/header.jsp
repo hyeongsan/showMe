@@ -19,9 +19,10 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	
 	<!-- Style -->
+	<link rel="stylesheet" href="/css/list.css">
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/story.css">
-	<link rel="stylesheet" href="/css/profile.css">
+	
 	<link rel="stylesheet" href="/css/upload.css">
 	<link rel="stylesheet" href="/css/update.css">
 	<link rel="shortcut icon" href="/images/insta.svg">

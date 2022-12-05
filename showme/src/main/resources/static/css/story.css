@@ -1,4 +1,4 @@
-@import "header.css";
+
 
 /*메인*/
 .main {
@@ -14,44 +14,7 @@
   margin: 0 auto;
 }
 
-/*프리뷰 카드*/
 
-.preview__card .preview__card__wrap{
-	display:flex;
-	justify-content:space-between;
-	padding: 0 20px;
-	margin: 6px 0 6px 30px;
-}
-
-.preview__card__wrap .preview__profile{
-	display: flex;
-    align-items: center;
-    margin: 6px 0 6px 30px;
-}
-
-.preview__card__wrap .preview__profile .preview__username{
-	margin-left: 10px;
-	position:relative;
-}
-.preview__card__wrap .preview__profile .preview__username:before{
-    
-    display: inline-block;
-    position: absolute;
-    left: 30px;
-    top: -2px;
-}
-.preview__card__wrap .preview__profile .preview__caption{
-	margin-left: 30px;
-}
-
-.preview__card__wrap .preview__profile .profile-image{
-  width: 40px;
-  height: 40px;
-  padding: 3px;
-  border-radius: 10px;
-  position: relative;
-	
-}
 
 /*게시물리스트*/
 .main .container .story-list {
@@ -61,13 +24,13 @@
 }
 
 /*게시물 리스트 아이템*/
-.main .container .story-list .story-list__item {
+.story-list__item {
   margin-bottom: 30px;
   border-radius: 4px;
   display:none;
 }
 
-.main .container .story-list .story-list__item.showComment{
+.story-list__item.showComment{
 	display:block;
 }
 
